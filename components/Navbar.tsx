@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Logo } from "@/components/Logo";
 
 const SECTIONS = [
   { id: "projects", label: "Projects" },
@@ -45,10 +46,10 @@ export function Navbar() {
       <div className="pointer-events-auto flex items-center gap-1 rounded-full border border-border/70 bg-surface/60 px-2 py-1.5 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] backdrop-blur-xl">
         <Link
           href="/"
-          className="font-display px-4 text-2xl leading-none text-text"
-          style={{ paddingTop: 2, paddingBottom: 2 }}
+          aria-label="Faultline home"
+          className="flex items-center px-3 text-text"
         >
-          Faultline
+          <Logo className="h-6 w-auto" />
         </Link>
 
         <div className="mx-1 h-5 w-px bg-border" aria-hidden="true" />
