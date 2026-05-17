@@ -58,7 +58,7 @@ export function Navbar() {
           const href = onHome ? `#${s.id}` : `/#${s.id}`;
           const isActive = onHome && activeSection === s.id;
           return (
-            <a
+            <Link
               key={s.id}
               href={href}
               className={`rounded-full px-3 py-1.5 text-sm transition-colors ${
@@ -68,7 +68,7 @@ export function Navbar() {
               }`}
             >
               {s.label}
-            </a>
+            </Link>
           );
         })}
 
