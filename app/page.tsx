@@ -4,6 +4,7 @@ import {
   getPapers,
   site,
 } from "@/lib/content";
+import { PeopleSection } from "@/components/PeopleSection";
 
 export default function HomePage() {
   const projects = getProjects();
@@ -89,34 +90,7 @@ export default function HomePage() {
       </Section>
 
       <Section id="people" title="People">
-        {people.length === 0 ? (
-          <EmptyState>People list coming soon.</EmptyState>
-        ) : (
-          <ul className="grid gap-4 sm:grid-cols-2">
-            {people.map((person) => (
-              <li
-                key={person.id}
-                className="rounded-lg border border-border bg-surface p-5"
-              >
-                <p className="text-lg font-medium text-text">{person.name}</p>
-                <p className="text-sm text-text-muted">{person.role}</p>
-                {person.affiliation && (
-                  <p className="text-sm text-text-muted">{person.affiliation}</p>
-                )}
-                {person.url && (
-                  <a
-                    href={person.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-2 inline-block text-sm text-accent hover:underline"
-                  >
-                    Website →
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
-        )}
+        <PeopleSection people={people} />
       </Section>
 
       <Section id="papers" title="Papers">

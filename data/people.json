@@ -1,3 +1,34 @@
 {
-  "people": []
+  "people": [
+    {
+      "name": "Yunze Zhao",
+      "role": "Student",
+      "affiliation": "University of Maryland, College Park",
+      "description": "Second Year Ph.D. student at University of Maryland, College Park. He's passionate about building user focused secure and reliable software systems.",
+      "avatar": "/notion-yunze.png",
+      "website": "https://www.yunzezhao.com/",
+      "googleScholar": "https://scholar.google.com/citations?user=-14O6jYAAAAJ&hl=en",
+      "github": "https://github.com/Yunzez"
+    },
+    {
+      "name": "Yibo Zhao",
+      "role": "Student",
+      "affiliation": "University of Maryland, College Park",
+      "description": "Second Year Ph.D. student at University of Maryland, College Park. Yibo's research interests are broadly in networked systems and machine learning systems.",
+      "avatar": "/notion-yibo.png",
+      "website": "https://zhaoyboo.github.io/",
+      "googleScholar": "https://scholar.google.com/citations?user=RvSZMG0AAAAJ&hl=en",
+      "github": "https://github.com/zhaoyboo"
+    },
+    {
+      "name": "Zaoxing (Alan) Liu",
+      "role": "Advisor",
+      "affiliation": "University of Maryland, College Park",
+      "description": "Alan loves everything networked and distributed: from networked systems and their security issues to robust algorithms that can hack large-scale problems. Alan leads the FROOT lab at UMD to make systems Faster, more Future-pROOf, and more Trustworthy",
+      "avatar": "/notion-alan.png",
+      "website": "https://zaoxing.github.io/",
+      "googleScholar": "https://scholar.google.com/citations?user=qvK1_5wAAAAJ",
+      "github": "https://github.com/zaoxing"
+    }
+  ]
 }

@@ -22,12 +22,14 @@ export type Project = {
 };
 
 export type Person = {
-  id: string;
   name: string;
-  role: string;
+  role?: string;
   affiliation?: string;
-  url?: string;
+  description?: string;
   avatar?: string;
+  website?: string;
+  googleScholar?: string;
+  github?: string;
 };
 
 export type Paper = {
