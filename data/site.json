@@ -1,0 +1,7 @@
+{
+  "name": "Faultline",
+  "tagline": "An open-source project for discovering, reproducing, and analyzing failures in LLM inference serving systems.",
+  "links": {
+    "repo": "https://github.com/Faultline-project"
+  }
+}

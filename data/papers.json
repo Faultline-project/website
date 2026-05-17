@@ -1,0 +1,13 @@
+{
+  "papers": [
+    {
+      "id": "grief-2026",
+      "title": "GRIEF: Reproducing Failures in LLM Inference Serving",
+      "authors": [],
+      "venue": "arXiv preprint",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2605.11202",
+      "project": "grief"
+    }
+  ]
+}

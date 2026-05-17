@@ -1,0 +1,15 @@
+{
+  "projects": [
+    {
+      "id": "grief",
+      "name": "GRIEF",
+      "tagline": "Discovering reproducible failures in LLM inference serving.",
+      "description": "GRIEF is the first Faultline tool: a framework for surfacing, reproducing, and analyzing failure modes in production LLM inference serving systems.",
+      "status": "active",
+      "links": {
+        "paper": "https://arxiv.org/abs/2605.11202"
+      },
+      "tags": ["inference", "fault discovery", "reproducibility"]
+    }
+  ]
+}
