@@ -49,7 +49,7 @@ export function Navbar() {
           aria-label="Faultline home"
           className="flex items-center px-3 text-text"
         >
-          <Logo className="h-6 w-auto" />
+          <Logo className="h-8 w-auto" />
         </Link>
 
         <div className="mx-1 h-5 w-px bg-border" aria-hidden="true" />

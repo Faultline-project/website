@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Person } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export function PeopleSection({ people }: { people: Person[] }) {
   const [selected, setSelected] = useState<number | null>(null);
@@ -114,7 +115,7 @@ export function PeopleSection({ people }: { people: Person[] }) {
                       {person.avatar ? (
                         /* eslint-disable-next-line @next/next/no-img-element */
                         <img
-                          src={person.avatar}
+                          src={asset(person.avatar)}
                           alt={person.name}
                           className={`h-full w-full object-cover transition-[filter] duration-300 ${
                             isSelected ? "brightness-110" : ""
