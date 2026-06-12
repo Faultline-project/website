@@ -1,0 +1,65 @@
+{
+  "cves": [
+    {
+      "id": "CVE-2026-10300",
+      "title": "SGLang LoRA manager reachable assertion via lora_path triggers remote DoS",
+      "product": "SGLang 0.5.10.post1",
+      "severity": "low",
+      "cvss": 3.4,
+      "description": "A reachable assertion in SGLang's LoRA manager (python/sglang/srt/lora/lora_manager.py) within the inference HTTP endpoint. Manipulating the lora_path argument triggers an assertion failure, producing a remote denial-of-service condition. Remotely exploitable; a public exploit exists.",
+      "disclosed": "2026-06-01",
+      "status": "disclosed",
+      "credits": ["Yunze Zhao"],
+      "project": "grief",
+      "links": {
+        "advisory": "https://vuldb.com/vuln/367593",
+        "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2026-10300",
+        "vendor": "https://github.com/sgl-project/sglang/issues/23141",
+        "patch": "https://github.com/sgl-project/sglang/pull/25078"
+      },
+      "tags": ["sglang", "lora", "reachable-assertion", "denial-of-service", "cwe-617"]
+    },
+    {
+      "id": "CVE-2026-9540",
+      "title": "vLLM n_completions + logprobs decode amplification causes TTFT DoS across co-scheduled requests",
+      "product": "vLLM 0.19.0",
+      "severity": "medium",
+      "cvss": 4.8,
+      "description": "A denial-of-service flaw in vLLM's OpenAI-compatible serving path: a single request combining n_completions=N with logprobs=K forces every co-scheduled request on the same batch to pay an N x full-vocabulary softmax/sort cost per decode step. Victim requests experienced 76x-423x time-to-first-token regressions. Remotely triggerable, no auth or user interaction.",
+      "discovered": "2026-03-17",
+      "disclosed": "2026-05-26",
+      "status": "disclosed",
+      "credits": ["Yunze Zhao"],
+      "project": "grief",
+      "links": {
+        "advisory": "https://vuldb.com/vuln/365601",
+        "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2026-9540",
+        "vendor": "https://github.com/vllm-project/vllm",
+        "patch": "https://github.com/vllm-project/vllm/pull/37594",
+        "writeup": "https://github.com/vllm-project/vllm/issues/37343"
+      },
+      "tags": ["vllm", "openai-api", "decode-amplification", "resource-exhaustion", "denial-of-service", "cwe-404"]
+    },
+    {
+      "id": "CVE-2026-7141",
+      "title": "vLLM KV-cache block recycle leaves stale K/V, causing non-deterministic output and NaN propagation",
+      "product": "vLLM ≤ 0.19.0",
+      "severity": "medium",
+      "cvss": 5.1,
+      "description": "In vLLM's V1 engine, the KV-block zeroing pipeline (introduced in #35219) is gated by has_mamba_layers in vllm/v1/kv_cache_interface.py and therefore only runs for Mamba models. For FullAttention models, KV blocks returned to the free pool on request completion or cancellation are reused without zeroing, so a subsequent request can decode from stale K/V belonging to a previous request. This produces non-deterministic output at temperature=0 (no prefix caching required) and can propagate NaNs through masked softmax in partial-block tail slots.",
+      "discovered": "2026-04-07",
+      "disclosed": "2026-04-27",
+      "status": "disclosed",
+      "credits": ["Yunze Zhao"],
+      "project": "grief",
+      "links": {
+        "advisory": "https://vuldb.com/vuln/359740",
+        "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2026-7141",
+        "vendor": "https://github.com/vllm-project/vllm",
+        "patch": "https://github.com/vllm-project/vllm/pull/39283",
+        "writeup": "https://github.com/vllm-project/vllm/issues/39146"
+      },
+      "tags": ["vllm", "kv-cache", "uninitialized-memory", "non-determinism", "cwe-908"]
+    }
+  ]
+}

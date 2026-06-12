@@ -2,6 +2,7 @@ import projectsData from "@/data/projects.json";
 import peopleData from "@/data/people.json";
 import papersData from "@/data/papers.json";
 import blogData from "@/data/blog.json";
+import cvesData from "@/data/cves.json";
 import siteData from "@/data/site.json";
 
 export type ProjectLink = {
@@ -50,6 +51,32 @@ export type BlogPost = {
   url?: string;
 };
 
+export type CVESeverity = "critical" | "high" | "medium" | "low" | "informational";
+
+export type CVELinks = {
+  advisory?: string;
+  patch?: string;
+  writeup?: string;
+  nvd?: string;
+  vendor?: string;
+};
+
+export type CVE = {
+  id: string;
+  title: string;
+  product: string;
+  severity: CVESeverity;
+  cvss?: number;
+  description: string;
+  discovered?: string;
+  disclosed?: string;
+  status: "reported" | "disclosed" | "patched" | "withdrawn";
+  credits?: string[];
+  project?: string;
+  links?: CVELinks;
+  tags?: string[];
+};
+
 export type Site = {
   name: string;
   tagline: string;
@@ -72,4 +99,8 @@ export function getPapers(): Paper[] {
 
 export function getBlogPosts(): BlogPost[] {
   return (blogData as { posts: BlogPost[] }).posts;
+}
+
+export function getCVEs(): CVE[] {
+  return (cvesData as { cves: CVE[] }).cves;
 }

@@ -73,6 +73,17 @@ export function Navbar() {
         })}
 
         <Link
+          href="/cve"
+          className={`rounded-full px-3 py-1.5 text-sm transition-colors ${
+            pathname?.startsWith("/cve")
+              ? "bg-accent/15 text-accent"
+              : "text-text-muted hover:text-text"
+          }`}
+        >
+          CVEs
+        </Link>
+
+        <Link
           href="/blog"
           className={`rounded-full px-3 py-1.5 text-sm transition-colors ${
             pathname?.startsWith("/blog")
